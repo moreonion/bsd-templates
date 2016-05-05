@@ -21,6 +21,7 @@ The main heading needs the class `headline` to get the cool background.
 <h1 class="headline content-seamless">
   Super important headline
 </h1>
+```
 
 ## background info
 
