@@ -1,0 +1,13 @@
+html/
+stylesheets/
+test/
+
+# dev background image
+images/relaxing.jpg
+images/relaxing2.jpg
+
+# scripts that are concatenated for production
+javascripts/jquery.fs.picker.js
+javascripts/jquery.fs.selecter.js
+javascripts/shareaction.js
+javascripts/socialtools-full-modern.js
