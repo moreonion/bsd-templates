@@ -3,11 +3,29 @@
 For useful widgets and beautiful styling only some additional html does the trick. Below, there are custom snippets ready-to-use in your BSD template.
 
 
+## two different templates
+
+Use the "big picture" one, if you want to use a big background image, use the
+default single column template with a gray background image otherwise.
+
+NB: If you use the "big picture" template, you will **HAVE TO** include a
+background image snippet (see below) into the content of your action.
+
 ## background image
 
+**You will need to do this for the "big picture" template!**
+
+Paste the background image at the top of your content.
+You can change the background image on a per-action basis, there is no need to
+copy and change the templates themselves.
+
 ```html
-<div id="background-image"><img src="/images/relaxing2.jpg" /></div>
+<div id="background-image"><img src="https://moreonion.github.io/shareaction-templates/images/huge_background.png" /></div>
 ```
+
+The image from the design drafts is found under https://moreonion.github.io/shareaction-templates/images/huge_background.png
+
+Prefer using `https` over `http` whereever possible.
 
 ## content seamless
 
@@ -20,6 +38,15 @@ The main heading needs the class `headline` to get the cool background.
 ```html
 <h1 class="headline content-seamless">
   Super important headline
+</h1>
+```
+
+This is meant to be at the very top of the content.
+If you want to use this headline inside the form you should add the class `in-text` too:
+
+```html
+<h1 class="headline content-seamless in-text">
+  Super important headline in the text
 </h1>
 ```
 
