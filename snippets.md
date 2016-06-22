@@ -11,6 +11,13 @@ default single column template with a gray background image otherwise.
 NB: If you use the "big picture" template, you will **HAVE TO** include a
 background image snippet (see below) into the content of your action.
 
+## surveys
+
+On Survey pages, the opening body tag needs the `survey` class in order for questionnaire labels to be displayed correctly.
+```html
+<body class="single-column survey">
+```
+
 ## background image
 
 **You will need to do this for the "big picture" template!**
@@ -117,3 +124,9 @@ These are social share buttons for Facebook, Twitter and email sharing:
 ```
 
 Make sure to replace the `{{placeholder parts}}` with the real urls and share texts! The name between `<span>name</span>` is what's displayed on the button itself, the `title` pops up when hovering over the button. (`<i></i>` makes space for the icon, which will be inserted automatically.)
+
+## custom buttons
+
+```
+<a class="button" href="{{my url}}" title="This appears on hover">This is the button caption</a>
+```
