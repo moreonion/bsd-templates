@@ -83,7 +83,7 @@ This makes your videos responsive, so they will always fit on the screen (even o
 ## progress bar (thermometer)
 
 ```html
-<div class="progressbar-wrapper line-after">
+<div class="progressbar-wrapper content-seamless">
   <div id="progressbar" data-form-id="{{ the id of the form }}" data-start-count="0">
     <div class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
@@ -98,7 +98,9 @@ required. You find it e.g. in Edit link in the admin page when you hover over
 "Edit" -- look for the number after `signup_form_id`.
 
 If you want to change the start count of the progressbar, edit the value of
-`data-start-count`.
+`data-start-count`. This only affects the initial loading of the progressbar.
+This is not an offset added to the actual count -- after the current count is
+polled, this polled value is used as-is.
 
 Feel free to replace the default copy with a text of your own! The numbers for
 `.counter` and `.target` will be updated automatically.
