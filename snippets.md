@@ -83,17 +83,25 @@ This makes your videos responsive, so they will always fit on the screen (even o
 ## progress bar (thermometer)
 
 ```html
-<div class="pgbar-thermometer line-after" data-target="250" data-start="0">
-  <div class="t_body">
-    <div class="t_level"></div>
+<div class="progressbar-wrapper line-after">
+  <div id="progressbar" data-form-id="{{ the id of the form }}" data-start-count="0">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+    </div>
+    <div class="progressbar-text"><span class="counter">0</span> people have taken action already</div>
   </div>
-  <p><span class="t_current">0</span> people have taken action already</p>
 </div>
 ```
 
-Feel free to replace the default copy with a text of your own! The numbers for `.t_current` and `.t_target` will be updated automatically.
+You will need to set the id for `data-form-id` of the form manually. This is
+required. You find it e.g. in Edit link in the admin page when you hover over
+"Edit" -- look for the number after `signup_form_id`.
 
-To set a new target, change the value for `data-target`. Change `data-start` to add an initial value, e.g. offline supporters. If the data-attributes are missing, the default values shown above will be used instead.
+If you want to change the start count of the progressbar, edit the value of
+`data-start-count`.
+
+Feel free to replace the default copy with a text of your own! The numbers for
+`.counter` and `.target` will be updated automatically.
 
 ## share links
 
