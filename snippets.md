@@ -82,6 +82,8 @@ This makes your videos responsive, so they will always fit on the screen (even o
 
 ## progress bar (thermometer)
 
+### for signup actions:
+
 ```html
 <div class="progressbar-wrapper content-seamless">
   <div id="progressbar" data-form-id="{{ the id of the form }}" data-start-count="0">
@@ -96,6 +98,38 @@ This makes your videos responsive, so they will always fit on the screen (even o
 You will need to set the id for `data-form-id` of the form manually. This is
 required. You find it e.g. in Edit link in the admin page when you hover over
 "Edit" -- look for the number after `signup_form_id`.
+
+### for speakout actions
+
+The progressbar for speakout actions assumes that the supporters first get to
+visit the landing page and are then redirected to the form page (this is the
+one you get to after clicking on the submit button on the landing page.
+
+Thus the "Show Goals To Users" option has to be set to "Yes" (in the "Campaign
+Goal Options" category). Otherwise the template will not be able to read out
+the number of letters sent.
+
+If the templates fails for some reason to read out the data on the landing
+page, e.g. if it is not displayed or if the markup changes, the progressbar
+will be hidden on the form page.
+
+```html
+<div class="progressbar-wrapper content-seamless">
+  <div id="progressbar" data-progressbar-type="speakout" data-start-count="0">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+    </div>
+    <div class="progressbar-text"><span class="counter">0</span> people have taken action already</div>
+  </div>
+</div>
+```
+
+This is mainly the same code, but you have to change `data-form-id` into
+`data-progressbar-type` with the value `speakout`.
+
+### Customizations
+
+(This applys to both variations, for signup and speakout progressbars.)
 
 If you want to change the start count of the progressbar, edit the value of
 `data-start-count`. This only affects the initial loading of the progressbar.
