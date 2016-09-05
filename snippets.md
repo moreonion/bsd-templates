@@ -174,3 +174,38 @@ Make sure to replace the `{{placeholder parts}}` with the real urls and share te
 ```
 <a class="button" href="{{my url}}" title="This appears on hover">This is the button caption</a>
 ```
+
+## Speakout campaigns
+
+Due to how BSD pages are rendered by BSD there needs to be a little setup for each Speakout campaign.
+This setup is needed for the skipping of the landing page and to get the data for the speakout campaign progress bar.
+
+In the campaign description add the following code:
+
+```
+<div id="landing-curtain"><noscript><div>Please enable JavaScript or <a href="#">skip this site</a>.</div></noscript></div>
+```
+
+This will prevent the landing page from flickering for a fraction of a second
+before the redirect can happen and will display a "warning" if the user has
+JavaScript disabled.
+
+The text inside the `<div>` is customizable.
+
+You will have to set the URL manually, though...
+
+### Redirection customization
+
+You can customize the redirect with two JavaScript variables, both are *optional*:
+
+```
+<script>
+window.mo_auto_redirect = true;
+window.mo_redirect_url = 'https://example.com/action';
+</script>
+```
+
+The default value of `window.mo_auto_redirect` is `true`, and the default value
+of `window.mo_redirect_url` is the current URL, with `js=false` appendend
+(setting the GET parameter to some value renders the second speakout step, the
+one with the form).
